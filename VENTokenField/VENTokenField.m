@@ -401,10 +401,10 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
 - (NSInteger) getLastIndexOfPage:(NSInteger)index
 {
     NSInteger lastIndexOfPage = index + self.itemsPerPage;
-    if ([self loadPagingIfNeed] && ([self numberOfTokens] > indexPerPage)) {
-      return lastIndexOfPage
+    if ([self loadPagingIfNeed] && ([self numberOfTokens] > lastIndexOfPage)) {
+        return lastIndexOfPage;
     }
-    return [self numberOfToken];
+    return [self numberOfTokens];
 }
 
 #pragma mark - Private
